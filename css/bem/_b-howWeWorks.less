@@ -1,0 +1,165 @@
+.b-howWeWorks{
+    background-color: @light-background-color;
+    padding: 90px 0 156px 154px;
+    
+    .mediaQuery(md, {
+        padding-left: 50px;
+    });
+    .mediaQuery(sm, {
+        padding-left: 50px;
+    });
+    .mediaQuery(xs, {
+        padding-left: 20px;
+    });
+    
+    &--position {
+//        position: relative;
+    }
+    &__title {
+        &--position {
+            margin-bottom: 45px;
+        }
+    }
+    &__content {
+        display: flex;
+        
+        .mediaQuery(sm, {
+            display: block;
+        });
+        .mediaQuery(xs, {
+            display: block;
+        });
+    }
+    &__infoText {
+        padding-right: 36px;
+        padding-bottom: 35px;
+        &--size {
+            width: 218px;
+            
+            .mediaQuery(sm, {
+                width: auto;
+            });
+            .mediaQuery(xs, {
+                width: asuto;
+            });
+        }
+    }
+    .button {
+        .buttonMixin(@main-bright-color, @light-text-color);
+        .aligningMixin;
+        
+        margin-bottom: 30px;
+        
+        .mediaQuery(xs, {
+            margin: 0 auto 30px;
+        });
+    }
+    &__slidesContainer {
+        display: flex;
+    }
+    &__slideName {
+        margin-bottom: 12px;
+    }
+    &__slideText {
+        color: @light-text-color;
+    }
+    &__slideWrap {
+        transform: skewX(-25deg);
+        box-shadow: -3px 9px 38px 0px rgba(0, 1, 10, 0.2);
+        overflow: hidden;
+        
+        &--size {
+            width: 233px;
+            min-width: 233px;
+            height: 223px;
+        }
+        &--position {
+            margin-right: 45px;
+        }
+        
+        .mediaQuery(xs, {
+            transform: none;
+        });
+        
+    }
+    &__slide1,
+    &__slide2,
+    &__slide3 {
+        background-color: antiquewhite;
+        transform: skewX(25deg);
+        
+        &--size {
+            width: 338px;
+            height: 223px;
+        }
+        &--position {
+            position: relative;
+            left: -53px;
+        }
+        
+        .mediaQuery(xs, {
+            transform: none;
+        });
+        
+    }
+    &__slide1 {
+        background: url(../img/HowWeWorksIdea.jpg), #616161;
+        background-blend-mode: overlay;
+        background-position: center;
+        
+        .mediaQuery(xs, {
+            background-blend-mode:multiply;
+        });
+    }
+    &__slide2 {
+        background: url(../img/HowWeWorksDesign.jpg), #616161;
+        background-blend-mode: overlay;
+        background-position: center;
+        
+        .mediaQuery(xs, {
+            background-blend-mode:multiply;
+            opacity: 0.1;
+        });
+    }  
+    &__slide3 {
+        background: url(../img/HowWeWorksOutput.jpg), #616161;
+        background-blend-mode: overlay;
+        background-position: center;
+        
+        .mediaQuery(xs, {
+            background-blend-mode:multiply;
+            opacity: 0.1;
+        });
+    }
+    &__slideInfo{
+        transition-duration: 0.3s;
+        
+        &--position {
+            position: absolute;
+            margin-left: 66px;
+            margin-right: 118px;
+            bottom: -53px;
+            
+            .mediaQuery(xs, {
+                bottom: 8px;
+            });
+        }
+    }
+    
+    &__slide1:hover,
+    &__slide2:hover,
+    &__slide3:hover {
+        background-blend-mode:multiply;
+    }
+    &__slideWrap:hover &__slideInfo{
+        bottom: 8px;
+    }
+    
+    &::after{
+        .triangleleMixin(432px, @main-bright-color, 90deg);
+        right: 0;
+        top: -300px;
+        display: none;
+    }
+    
+}

@@ -1,0 +1,108 @@
+.b-whoWeAre {
+    background-color: @light-background-color;
+    padding: 75px 103px 38px 150px;
+    display: flex;
+    justify-content: space-between;
+    
+    .mediaQuery(lg, {
+        padding-left: 50px;
+        padding-right: 0;
+    });
+    .mediaQuery(md, {
+        padding-left: 50px;
+        padding-right: 0;
+    });
+    .mediaQuery(sm, {
+        padding-left: 50px;
+        padding-right: 0;
+    });
+    .mediaQuery(xs, {
+        padding-left: 10px;
+        padding-right: 10px;
+    });
+    
+    &--position {
+        position: relative;
+    }
+    &__title {
+        padding-bottom: 57px;
+        
+        .mediaQuery(xs, {
+            text-align: center;
+        });
+    }
+    &__text {
+        padding-left: 12px;
+        padding-right: 15px;
+        
+        .mediaQuery(sm, {
+            margin-right: 150px;
+        });
+        
+        &--position {
+            margin-bottom: 58px;
+        }
+    }
+    .button {
+        .buttonMixin(@main-bright-color, @light-text-color);
+        .aligningMixin;
+        
+        .mediaQuery(xs, {
+            margin: auto;
+        });
+    }
+    &__imgContainer {
+        padding-top: 12px;
+        
+        .mediaQuery(md, {
+            width: 200px;
+            padding-right: 200px;
+        });
+        .mediaQuery(sm, {
+            display: none;
+        });
+        .mediaQuery(xs, {
+            display: none;
+        });
+        
+        &--position {
+            position: relative;
+            z-index: 10;
+        }
+
+    }
+    
+    &__macbook {
+        .mediaQuery(md, {
+            width: 400px;
+        });
+        .mediaQuery(sm, {
+            width: 400px;
+        });
+    }
+    
+    &__macbookImg {
+        top: 28px;
+        left: 95px;
+        
+        .mediaQuery(md, {
+            width: 262px;
+            left: 67px;
+            top: 25px;
+        });
+        .mediaQuery(sm, {
+            width: 262px;
+            left: 67px;
+            top: 25px;
+        });
+        
+        &--position {
+            position: absolute;
+        }
+    }
+    &::after {
+        .triangleleMixin(503px, @dark-trianglele-color, 0);
+        top: 0;
+        left: 405px;
+    }
+}

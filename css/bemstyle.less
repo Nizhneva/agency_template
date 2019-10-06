@@ -1,0 +1,96 @@
+@import "_fonts";
+@import "media";
+@import "_colors";
+@import "bem/_b-header";
+@import "bem/_b-brandName";
+@import "bem/_b-nav";
+@import "bem/_b-mainBanner";
+@import "bem/_b-whoWeAre";
+@import "bem/_b-whatWeDo";
+@import "bem/_b-howWeWorks";
+@import "bem/_b-team";
+@import "bem/_b-review";
+@import "bem/_b-footer";
+@import "bem/_b-contacts";
+@import "bem/_b-media";
+@import "bem/_b-copyright";
+
+/*----------------------------------------------------*/
+* {margin: 0;padding: 0;}
+/*----------------------------------------------------*/
+body {
+    background-color: #d1d1d1;
+}
+.aligningMixin() {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.buttonMixin(@_bgColor, @_textColor) {
+    text-decoration: none;
+    text-transform: uppercase;
+    height: 41px;
+    width: 144px;
+    line-height: 41px;
+    text-align: center;
+    border-radius: 30px;
+    font-family: LatoBold, sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    box-shadow: -3px 9px 38px 0px rgba(0, 1, 10, 0.2);
+    background-color: @_bgColor;
+    color: @_textColor;
+}
+.triangleleMixin(@_size, @_color, @_rotate) {
+    position: absolute;
+    content: '';
+    border: @_size solid transparent;
+    border-top: @_size solid @_color;
+    transform: rotate(@_rotate);
+}
+/*----------------------------------------------------*/
+p {
+    font-family: OpenSans, sans-serif;
+    color: @main-text-color;
+    font-size: 13px;
+    font-weight: 300;
+    text-align: left;
+}
+h1 {
+    font-family: PeaceSans, sans-serif;
+    color: #494949;
+    font-size: 47px;
+    line-height: 42px;
+    font-weight: 300;
+    z-index: 10;
+}
+
+h2 {
+    font-family: OpenSansExtraBold, sans-serif;
+    color:  #6f6f6e;
+    font-size: 23px;
+    font-weight: 600;
+}
+
+h3 {
+    font-family: Lato, sans-serif;
+    color: @light-text-color;
+    font-size: 30px;
+    line-height: 24px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+/*----------------------------------------------------*/
+.container {
+    max-width: 1200px;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+    
+    .mediaQuery(lg, {
+        width: 100%;
+    });
+}
+/*----------------------------------------------------*/
+
+

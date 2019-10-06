@@ -1,0 +1,122 @@
+.b-mainBanner {
+    background: url(../img/MainBanner.jpg), @main-bright-color;
+    background-blend-mode: multiply;
+    
+    &--size {
+        height: 668px;
+        
+        .mediaQuery(xs, {
+            height: 600px;
+        });
+    }
+    &--position {
+        position: relative;
+    }
+    
+    &__text {
+        padding-top: 180px;
+        padding-left: 135px;
+        background-image: url(../img/MainBanner.jpg);
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        -webkit-background-clip: text;
+        display: inline;
+        filter: drop-shadow(0px 0px 10px #000);
+        
+        .mediaQuery(md, {
+            padding-left: 0;
+        });
+        .mediaQuery(sm, {
+            padding-left: 0;
+        });
+        .mediaQuery(xs, {
+            padding-left: 0;
+        });
+        
+        &--size {
+            width: 600px;
+            
+            .mediaQuery(sm, {
+                width: 100%;
+            });            
+            .mediaQuery(xs, {
+                width: 100%;
+            });
+        }
+        &--position {
+            position: absolute;
+            z-index: 100;
+        }
+    }
+        
+    &__textItem {
+        font-family: LemonMilk;
+        font-weight: 300;
+        text-align: center;
+        
+        &--large {
+            font-size: 120px;
+            line-height: 102px;
+            
+            .mediaQuery(xs, {
+                font-size: 21vw;
+                line-height: 0.85em;
+                white-space: nowrap;
+            });
+            
+        }
+        &--small {
+            font-size: 72px;
+            line-height: 64px;
+            
+            .mediaQuery(xs, {
+                font-size: 13vw;
+                line-height: 0.85em;
+                white-space: nowrap;
+            });
+        }
+    }
+    
+    .button {
+        .buttonMixin(@light-background-color, #242424);
+        -webkit-text-fill-color: #242424;
+        display: block;
+        margin: 48px auto 0;
+        .mediaQuery(xs, {
+            margin-top: 75px;
+        });
+    }
+    
+    
+    &__img {
+        &--position{
+            margin-top: 38px;
+            margin-left: 550px;
+            position: absolute;
+            z-index: 1000;
+            
+            .mediaQuery(md, {
+                margin-left: 415px;
+            });
+            .mediaQuery(sm, {
+                display: none;
+            });
+        }
+    }
+    
+    &__shade {
+        mix-blend-mode: color-dodge;
+        
+        &--position {
+            margin-left: 338px;
+            z-index: -1;
+            
+            .mediaQuery(md, {
+                margin-left: 203px;
+            });
+            .mediaQuery(sm, {
+                display: none;
+            });
+        }
+    }
+}

@@ -1,0 +1,50 @@
+.b-contacts {
+    display: flex;
+    justify-content: space-between;
+    
+    .mediaQuery(xs, {
+        flex-direction: column;
+    });
+    
+    &--position {
+        margin-bottom: 75px;
+    }
+    
+    &__item {
+        .mediaQuery(xs, {
+            margin-bottom: 30px;
+        });   
+    }
+    
+    &__textWrap {
+        overflow: hidden;
+    }
+    &__icon {
+        &--position {
+            float: left;
+            margin-right: 21px;
+        }
+        
+        .mediaQuery(xs, {
+            display: none;
+        });
+    }
+    &__itemName {
+        font-family: OpenSans;
+        color: @light-text-color;
+        font-size: 17px;
+        font-weight: 600;
+        line-height: 18px;
+        
+        &--position {
+            margin-bottom: 15px;
+        }
+    }
+    &__itemText {
+        font-family: OpenSans;
+        color: @light-text-color;
+        font-size: 13px;
+        font-weight: 300;
+        line-height: 18px;
+    }
+}

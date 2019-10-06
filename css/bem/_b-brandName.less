@@ -1,0 +1,15 @@
+@import "../media";
+@import "../_fonts";
+@import "../_colors";
+
+.b-brandName {
+    font-family: LatoBlack;
+    color: @light-text-color;
+    font-size: 33px;
+    font-weight: 800;
+    padding-left: 50px;
+    
+    .mediaQuery(xs, {
+        padding-left: 30px;
+    });
+}

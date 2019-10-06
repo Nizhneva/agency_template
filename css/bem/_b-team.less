@@ -1,0 +1,188 @@
+.b-team {
+    padding: 75px;
+    background-color: @mid-background-color;
+    
+    &--position {
+        position: relative;
+    }
+    
+    &__title {
+        text-align: center;
+        
+        &--position {
+            margin-bottom: 68px;
+        }
+    }
+    
+    &__persons {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        
+        &::before {
+            .triangleleMixin(36px, #424240, 90deg);
+            height: 0;
+            width: 0;
+            position: static;
+            margin-top: -40px;
+            margin-right: 128px;
+            
+            .mediaQuery(lg, {
+                margin-right: 90px;
+            });
+            .mediaQuery(md, {
+                margin-right: -60px;
+            });
+            .mediaQuery(sm, {
+                margin-right: -110px;
+            });
+            .mediaQuery(xs, {
+                display: none;
+            });
+        }
+        &::after {
+            .triangleleMixin(36px, #424240, -90deg);
+            height: 0;
+            width: 0;
+            position: static;
+            margin-top: -40px;
+            margin-left: 128px;
+            
+            .mediaQuery(lg, {
+                margin-left: 90px;
+            });
+            .mediaQuery(md, {
+                margin-left: -60px;
+            });
+            .mediaQuery(sm, {
+                margin-left: -110px;
+            });
+            .mediaQuery(xs, {
+                display: none;
+            });
+        }
+    }
+    &__centerItem{
+        &--position {
+            position: relative;
+            z-index: 100;
+            margin: 0 38px;
+            .mediaQuery(xs, {
+                margin: 0;
+            });
+        }
+    }
+    &__leftItem,
+    &__rightItem {
+        .mediaQuery(md, {
+            opacity: 0.1;
+        });
+        .mediaQuery(sm, {
+            opacity: 0.1;
+        });
+        .mediaQuery(xs, {
+            opacity: 0.1;
+        });
+    }
+    &__imgWrap {
+        box-shadow: -3px 9px 30px 0px rgba(0, 1, 1, 0.22);
+        border: solid @light-background-color 14px;
+        box-sizing: border-box;
+        transform: rotate(45deg);
+        overflow: hidden;
+        
+
+        
+        &--left,
+        &--right {
+            width: 183px;;
+            height: 183px;
+        }
+        &--center {
+            width: 265px;;
+            height: 265px;
+            .mediaQuery(xs, {
+                width: 250px;;
+                height: 250px;
+            });
+        }
+    }
+    &__img {
+        transform: rotate(-45deg) scale(1.42);
+            
+        &--size {
+            height: 100%;
+        }
+    }
+    &__personName {
+        display: block;
+        background-color: #252525;
+        clip-path: polygon(0 0, 85% 0, 100% 100%, 15% 100%);
+        color: @light-text-color;
+        font-family: OpenSans;
+        font-weight: 600;
+        text-align: center;
+        line-height: 170%;
+        
+        &--position {
+            position: relative;
+            margin: auto;
+        }
+        &--small {
+            width: 180px;
+            height: 30px;
+            font-size: 14px;
+        }
+        &--large {
+            width: 207px;
+            height: 38px;
+            font-size: 18px;
+        }
+    }
+    &__post {
+        display: block;
+        clip-path: polygon(0 0, 85% 0, 100% 100%, 15% 100%);
+        font-family: OpenSans;
+        font-style: italic;
+        text-align: center;
+        font-size: 15px;
+        background-color: transparent;
+        color: transparent;
+        display: none;
+        
+        &--size {
+            width: 128px;
+            height: 23px;
+        }
+        &--position {
+            position: relative;
+            margin: auto;
+            top: -5px;
+            left: 15px;
+        }
+        &--visible {
+            background-color: @main-bright-color;
+            color: @light-text-color;
+            display: block;
+        }
+    }
+
+    &::before {
+        .triangleleMixin(162px, @dark-trianglele-color, -90deg);
+        left: 0;
+        top: -162px;
+    }
+    &::after {
+        .triangleleMixin(355px, @main-bright-color, -90deg);
+        left: 0;
+        bottom: -668px;
+        
+        .mediaQuery(sm, {
+            display: none;
+        });
+        .mediaQuery(xs, {
+            display: none;
+        });
+    } 
+}
